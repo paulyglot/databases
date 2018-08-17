@@ -1,0 +1,105 @@
+1.What data types do each of these values represent?
+
+"A Clockwork Orange" - string
+42 - integer 
+09/02/1945 - string
+98.7 - float
+$15.99 - string
+
+2.Explain when a database would be used. Explain when a text file would be used.
+
+Answer: databases are used when you want to add new things to a pre-existing one, and not have the data simply exist in memory on the computer. Additionally, databases are used so that multiple users from different locations can access, edit, manipulate data on their own through a db interface.
+
+3.Describe one difference between SQL and other programming languages.
+
+Answer: SQL is declarative meaning we tell the db what we're looking for and the db engine determines the most efficient way to return the data. Other programming languages that differ from a db language are procedural, meaning we would be defining the algorith for how the database should search.
+
+4.In your own words, explain how the pieces of a database system fit together at a high level.
+
+Answer: Structued Query Level db's use tables and columns to organize data. Where the columns are rows meet at each point represent cells, and each cell has value-some pieces of information that the column name describes. Rows make up a complete conceptual unit, and the power of databases lie in the ability to query and manipulate the data. Using declarative statements to select columns, from specific tables at specific rows, we can access data and manipulate.
+
+5.Explain the meaning of table, row, column, and value.
+
+Answer: table - madeup of columns are rows that is the structure which contains all of the organized data. Columns - define what the data represents, Rows - make up a complete conceptual unit, value - is the 'cell' which contains a particular value-some piece of information which lies at the mergence point of each column and row. 
+
+6.List three data types that can be used in a table.
+
+Answer: string, integer, float
+
+7.Given this payments table, provide an English description of the following queries and include their results:
+
+     SELECT date, amount
+     FROM payments;
+
+     Answer: "I'm looking for the date and amount from payments db table" 
+     table:payments
+     date          amount 
+     08-16-2018	   $1,000,00
+
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     SELECT amount
+     FROM payments
+     WHERE amount > 500;
+
+     Answer: "I'm looking for all amounts which are greater than 500".     
+     table: payments
+     amount 
+     $600
+     $700
+     $800
+     $900
+     $1000
+     $1100
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     SELECT *
+     FROM payments
+     WHERE payee = 'Mega Foods';
+
+     Answer: "I'm looking for all columns where payee is Mega Foods".
+     table:payments
+     payee          date          amount    
+     Mega Foods   08-16-2018	 $17
+     Mega Foods   05-16-2018	 $1345
+     Mega Foods   08-13-2018	 $14575
+     Mega Foods   06-16-2018	 $14654
+     Mega Foods   08-16-2018	 $1232
+     Mega Foods   08-15-2018	 $156
+     Mega Foods   07-16-2018	 $1236
+     Mega Foods   08-17-2018	 $1657
+
+8.Given this users table, write SQL queries using the following criteria and include the output:
+
+The email and sign-up date for the user named DeAndre Data.
+Answer:
+SELECT email and sign-up date 
+FROM users
+WHERE name = DeAndre Data;
+
+The user ID for the user with email 'aleesia.algorithm@uw.edu'.
+Answer:
+SELECT user ID
+FROM users
+WHERE email = 'aleesia.algorithm@uw.edu';
+
+All the columns for the user ID equal to 4.
+Answer:
+SELECT *
+FROM users
+WHERE user ID = 4;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

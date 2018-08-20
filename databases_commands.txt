@@ -64,23 +64,111 @@ INSERT INTO holdBooks (isbn, title, author, genre, pusblishDate, copies, copiesA
 (1134477960, 'Psychiatry', 'Paul A Jones', 'non-fiction', DATE '2015-08-04', 15, 10);
 
 Someone has just checked out one of the books. Change the number of available copies to 1 fewer.
+
 UPDATE holdBooks SET copies=9 WHERE isbn=1134477960;
 
 Now one of the books has been added to the banned books list. Remove it from the table.
+
 DELETE FROM holdBooks WHERE isbn=2134477960;
 
 6.Write a command to make a new table to hold spacecrafts. Information should include id, name, year launched, country of origin, a brief description of the mission, orbiting body, if it is currently operating, and its approximate miles from Earth. In addition to the table creation, provide commands that perform the following operations:
 
+CREATE TABLE spaceCrafts (
+	id integer,
+	name text,
+	yearLaunched integer,
+	countryOrigin text,
+	description text,
+	orbitingBody text,
+	operating boolean,
+	milesAway numeric (10, 2)
+);
+
 Add three non-Earth-orbiting satellites to the table.
+
+INSERT INTO spaceCrafts (id, name, yearLaunched, countryOrigin,	description, orbitingBody, operating, milesAway) VALUE 
+(100, 'Paul's Solar System Satellite', 2018, 'USA', 'satellite launched to help with climactic data collection on Mars', 'DELTA 205 MARS', TRUE, 500,000),
+(101, 'Climate Reactor', 2016, 'USA', 'satellite launched to help with climactic data collection on Mars', 'DELTLA 1 DEB', TRUE, 450,000),
+(102, 'Into the Abyss', 2017, 'USA', 'satellite launched to help with climactic data collection on Mars', 'COSMOS 2251', TRUE, 20,000);
+
 Remove one of the satellites from the table since it has just crashed into the planet.
+
+DELETE FROM spaceCrafts WHERE id=102;
+
 Edit another satellite because it is no longer operating and change the value to reflect that.
 
+UPDATE spaceCrafts SET operating=FALSE WHERE id=101;
 
 7.Write a command to create a new table to hold the emails in your inbox. This table should include an id, the subject line, the sender, any additional recipients, the body of the email, the timestamp, whether or not you have read the email, and the id of the email chain it's in. Also provide commands that perform the following operations:
 
+CREATE TABLE emailInbox (
+	id integer,
+	subject text,
+	sender text,
+	recipients text,
+	body text,
+	timestamp timestamp,
+	unread boolean,
+	emailChain integer
+);
+
 Add three new emails to the inbox.
+
+INSERT INTO emailInbox (id, subject, sender, recipients, body, timestamp, unread, emailChain) VALUE 
+(1, 'missed meeting', 'pabrower@ucdavis.edu', 'help@bloc.io', 'hello bloc I missed my mentor meeting, and I'd like to reschedule thanks!', TIMESTAMP, TRUE, 3000),
+(2, 'freeze account', 'pabrower@ucdavis.edu', 'help@bloc.io', 'hello bloc I need to freeze my account for this week thanks!', TIMESTAMP, TRUE, 3001),
+(3, 'new mentor', 'pabrower@ucdavis.edu', 'help@bloc.io', 'hello bloc my mentor and I don't get along, and I'd like to get a new one thanks!', TIMESTAMP, FALSE, 3002);
+
 You deleted one of the emails, so write a command to remove the row from the inbox table.
-You started reading an email but just heard a crash in another room. Mark the email as unread before investigating the crash, so you can come back and read it later.
+
+DELETE FROM emailInbox WHERE id=2;
+
+You started reading an email but just heard a crash in another room. Mark the email as unread 
+before investigating the crash, so you can come back and read it later.
+
+UPDATE  emailInbox SET unread=TRUE WHERE id=3;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
